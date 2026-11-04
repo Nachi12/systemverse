@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #090E12;
+  --card: #172126;
+  --primary: #A3E635;
+  --accent: #2DD4BF;
+  --text: #E7F5F0;
+  --border: #24333B;
+  --text-muted: #7E9693;
+}
+
+body {
+  color: #E7F5F0;
+  background-color: #090E12;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+code, pre, .font-mono {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  letter-spacing: -0.02em;
+}
+
+/* Minimal Architectural Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #090E12;
+}
+::-webkit-scrollbar-thumb {
+  background: #24333B;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2F434E;
+}
+
+/* Architectural React Flow overrides */
+.react-flow__background {
+  background-color: transparent !important;
+}
+
+.react-flow__controls {
+  border-radius: 4px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7) !important;
+  border: 1px solid #24333B !important;
+  background: #172126 !important;
+}
+
+.react-flow__controls-button {
+  background: #172126 !important;
+  border-bottom: 1px solid #24333B !important;
+  fill: #7E9693 !important;
+  border-radius: 0 !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #1D2A31 !important;
+  fill: #A3E635 !important;
+}
+
+/* Restrained packet flow */
+@keyframes flowPacket {
+  0% {
+    stroke-dashoffset: 16;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animated-packet-flow {
+  stroke-dasharray: 4 4;
+  animation: flowPacket 0.8s linear infinite;
+}
